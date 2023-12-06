@@ -71,7 +71,7 @@ fn main() -> Result<()> {
                     None
                 )?;
                 println!(
-                    "{}",
+                    "[i] Drive Letter\t: {}",
                     VarFormat(
                         &value,
                         None,
@@ -95,7 +95,7 @@ fn main() -> Result<()> {
                         0
                     )?.to_string());
 
-                println!("WMI Query\t\t: {}", fuck);
+                println!("[*] WMI Query\t\t: {}", fuck);
 
                 let server2 =
                     locator.ConnectServer(
@@ -135,7 +135,7 @@ fn main() -> Result<()> {
                             None
                         )?;
                         println!(
-                            "DeviceID\t\t: {}",
+                            "[*] DeviceID\t\t: {}",
                             VarFormat(
                                 &value2,
                                 None,
@@ -153,7 +153,7 @@ fn main() -> Result<()> {
                             None
                         )?;
                         println!(
-                            "PersistentVolumeID\t: {}",
+                            "[*] PersistentVolumeID\t: {}",
                             VarFormat(
                                 &value2,
                                 None,
@@ -171,7 +171,7 @@ fn main() -> Result<()> {
                                  None
                         )?;
                         println!(
-                            "DriveLetter\t\t: {}",
+                            "[*] DriveLetter\t\t: {}",
                             VarFormat(
                                 &value2,
                                 None,
@@ -189,7 +189,7 @@ fn main() -> Result<()> {
                                  None
                         )?;
                         println!(
-                            "ProtectionStatus\t: {}",
+                            "[*] ProtectionStatus\t: {}",
                             VarFormat(
                                 &value2,
                                 None,
@@ -198,6 +198,8 @@ fn main() -> Result<()> {
                                 0
                             )?
                         );
+
+                        println!("\n");
                         VariantClear(&mut value2)?;
                     } else {
                         break;
