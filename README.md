@@ -2,7 +2,7 @@
 Does what it says on the tin.
 
 ## How
-Queries the `root\cimv2` WMI namespace and fetches each of the drive letters by executing `select Caption from Win32_LogicalDisk`, for each of the drive letters it queries the `root\CIMV2\Security\MicrosoftVolumeEncryption` WMI namespace and runs `SELECT * FROM Win32_EncryptableVolume Where DriveLetter='DRIEVLETTERHERE'` for each of the drive letters installed in order to fetch the `DeviceID`, `PersistentVolumeID`, `DriveLetter` and `ProtectionStatus`.
+Queries the `root\cimv2` WMI namespace and fetches each of the drive letters by selecting the `Caption` property from the `Win32_LogicalDisk` class, for each of the drive letters it queries the `root\CIMV2\Security\MicrosoftVolumeEncryption` WMI namespace and selects all properties from the `Win32_EncryptableVolume` class where the drive letter is the current iterations drive letter, in order to fetch the `DeviceID`, `PersistentVolumeID`, `DriveLetter` and `ProtectionStatus`.
 
 ## Usage 
 ```
